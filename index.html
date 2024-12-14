@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assest/css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <img class="logo" src="assest/image/logo(1).png" alt="" />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home </a></li>
+          <li><a href="#about"> About </a></li>
+          <li><a href="#services">services</a></li>
+          <li><a href="#testimonials">Testimonial</a></li>
+          <li><a href="#blog">Blog</a></li>
+
+          <li><a href="#testimonials">Dropdown</a></li>
+          <li class="dropdown">
+            <a href="#" class="drop-btn">
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="#service1">Service 1</a></li>
+              <li><a href="#service2">Service 2</a></li>
+              <li><a href="#service3">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="fas fa-bars menu-icon"></i>
+      </nav>
+    </header>
+    <style>
+      /* General Styling */
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-top: 20px;
+        background: white;
+        color: black;
+      }
+
+      /* Navigation Styles */
+      nav {
+        margin-left: 25%;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+
+        width: 20%;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        font-family: Arial;
+      }
+
+      .nav-links .dropdown {
+        position: relative;
+      }
+
+      .nav-links .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        min-width: 150px;
+        z-index: 10;
+      }
+
+      .nav-links .dropdown-content li a {
+        color: #333;
+        padding: 10px 10px;
+        display: block;
+        text-decoration: none;
+      }
+      .nav-links .dropdown-content li a:hover {
+        background: #f4f4f4;
+      }
+
+      /* Dropdown hover functionality */
+      .nav-links .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .logo {
+        width: 50%;
+      }
+
+      /* Responsive Design */
+      .menu-icon {
+        display: none;
+        color: black;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .nav-links .dropdown-content li a:hover {
+        color: #116530;
+      }
+      .nav-links a:hover {
+        color: #116530;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background: #116530;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          width: 100%;
+          /* padding: 10px 0; */
+          padding: 50%;
+          z-index: 1;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+        .menu-icon {
+          display: block;
+          font-size: 14px;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuIcon.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+
+        const dropBtn = document.querySelector(".drop-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        dropBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          dropdownContent.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <!-- Carousel Section (Home Section) -->
+    <div id="home" class="carousel">
+      <div class="slides">
+        <div class="slide">
+          <h2>
+            Providing Fresh Produce Every <br />
+            Single Day
+          </h2>
+          <p>
+            Quality produce to nourish and sustain you, cultivated with care.
+          </p>
+        </div>
+        <div
+          class="slide"
+          style="background-image: url('assest/image/download.jpg')"
+        >
+          <h2>Organic vegetables is good for <br />health</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus id quod maxime placeat facere possimus.
+          </p>
+        </div>
+        <div
+          class="slide"
+          style="background-image: url('assest/image/img_long_5.jpg')"
+        >
+          <h2>Farming as a Passione</h2>
+          <p>
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+            consectetur, adipisci velit, sed quia non numquam eius.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <!-- <section id="about"> -->
+    <!-- <h2>About Us</h2> -->
+    <!-- <p>
+        We are committed to providing high-quality produce directly from our
+        farms to your tables.
+      </p> -->
+    <!-- </section> -->
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="text-cont">
+        <h2>SERVICES</h2>
+      </div>
+      <!-- <p class="text-conts">Providing Fresh Produce Every Single Day</p> -->
+      <uk class="text-conts">Providing Fresh Produce Every Single Day</uk>
+    </section>
+    <section class="table">
+      <div class="bodddy">
+        <div class="grid-container">
+          <div class="grid-item">
+            <span class="number">01</span>
+            <img src="assest/image/hand.jpg" alt="Planting Icon" />
+            <!-- <img src="assets/images/o" alt="" /> -->
+            <h3>Planting</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">02</span>
+            <img src="assest/image/mulching.jpg" alt="Mulching Icon" />
+            <h3>Mulching</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">03</span>
+            <img src="assest/image/img_long_5.jpg" alt="Plowing Icon" />
+            <h3>Plowing</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">04</span>
+            <img src="assest/image/Mowing.png" alt="Mowing Icon" />
+            <h3>Mowing</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">05</span>
+            <img src="assest/image/Seeding.jpg" alt="Seeding Icon" />
+            <h3>Seeding</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">06</span>
+            <img
+              src="assest/image/freshvegeta.jpg"
+              alt="Fresh Vegetables Icon"
+            />
+            <h3>Fresh Vegetables</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">07</span>
+            <img src="assest/image/watering.jpg" alt="Watering Icon" />
+            <h3>Watering</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">08</span>
+            <img
+              src="assest/image/vegetable sell.jpg"
+              alt="Vegetable Selling Icon"
+            />
+            <h3>Vegetable Selling</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <!-- <div class="grid-item">
+            <span class="number">08</span>
+            <img src="assets/images/blog-1.jpg" alt="Vegetable Selling Icon" />
+            <h3>Vegetable Selling</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div> -->
+          <!-- <div class="grid-item">
+            <span class="number">08</span>
+            <img src="assets/images/blog-1.jpg" alt="Vegetable Selling Icon" />
+            <h3>Vegetable Selling</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div> -->
+          <!-- <div class="grid-item">
+            <span class="number">08</span>
+            <img src="assets/images/blog-1.jpg" alt="Vegetable Selling Icon" />
+            <h3>Vegetable Selling</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div>
+          <div class="grid-item">
+            <span class="number">08</span>
+            <img src="assets/images/blog-1.jpg" alt="Vegetable Selling Icon" />
+            <h3>Vegetable Selling</h3>
+            <p>
+              Gravida sodales condimentum pellen tesq accumsan orci quam
+              sagittis sapien
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="agriculture-section">
+      <div class="image-container">
+        <img src="assest/image/img_long_5.jpg" alt="Farmer smiling" />
+      </div>
+      <div class="text-container">
+        <h2>Why Choose Us</h2>
+        <h1>More than 50 years of experience in the agriculture industry</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
+          risus non urna condimentum accumsan.
+        </p>
+        <ul>
+          <li>Plants need rain</li>
+          <li>Love organic foods</li>
+          <li>Eco-friendly methods</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="third-section">
+      <div class="third-container">
+        <div class="third-left">
+          <h1>Plants Make Life Better</h1>
+          <div class="third-text">
+            <h5>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+              necessitatibus placeat, atque qui voluptatem velit explicabo vitae
+              repellendus architecto provident nisi ullam minus asperiores
+              commodi! Tenetur, repellat aliquam nihil illo.
+            </h5>
+            <div class="third-p">
+              <p><i class="fas fa-check icon"></i>ipsum dolor sit amet</p>
+              <p>
+                <i class="fas fa-check icon"></i>Velit explicabo vitae
+                repellendu
+              </p>
+              <p>
+                <i class="fas fa-check icon"></i>Repellat aliquam nihil illo
+              </p>
+            </div>
+          </div>
+          <button id="get-in-touch">Get in touch</button>
+        </div>
+        <!-- <div class="third-right">
+          <img class="op" src="assets/images/img_sq_1.jpg" alt="" />
+        </div> -->
+        <div class="third-right">
+          <img
+            class="op"
+            src="assest/image/img_sq_1.jpg"
+            alt="Video Thumbnail"
+          />
+          <a
+            href="assets/viedo/True Legend (2010).mkv"
+            data-fancybox="video"
+            class="play-button"
+          ></a>
+        </div>
+        <style>
+          .third-right {
+            position: relative;
+            display: inline-block;
+            max-width: 600px; /* Adjust size as needed */
+          }
+
+          .third-right img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+
+          .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: rgba(
+              0,
+              128,
+              0,
+              0.8
+            ); */
+            background-color: #116530;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          }
+
+          .play-button::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+          }
+          .play-button:hover {
+            /* background-color: red; */
+            animation: pulse 1s infinite;
+          }
+
+          /* @keyframes breathe {
+            0% {
+              transform: scale(0.9);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+              transform: scale(0.9);
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+            100% {
+              transform: scale(0.9);
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            }
+          } */
+          @keyframes pulse {
+            0% {
+              transform: scale();
+              box-shadow: 0 0 10px #116530;
+            }
+            50% {
+              transform: scale();
+              box-shadow: 0 0 20px #38d973;
+            }
+            100% {
+              transform: scale();
+              box-shadow: 0 0 10px #116530;
+            }
+          }
+        </style>
+      </div>
+    </div>
+    <!-- <section id="now">
+      <div class="now-content">
+        <h2>SERVICES</h2>
+       
+        <uk class="now-text">Necessitatibus eius consequatur </uk>
+      </div>
+
+      <div class="services-cards active">
+        <div class="card">
+          <img src="assets/images/testimonials-3.jpg" alt="Service 1" />
+          <div class="checkbox"></div>
+          <div class="hover-overlay">
+            <p>Harvesting fresh vegetables</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/testimonials-3.jpg" alt="Service 2" />
+          <div class="checkbox"></div>
+          <div class="hover-overlay">
+            <p>Harvesting fresh vegetables</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/images/testimonials-3.jpg" alt="Service 3" />
+          <div class="checkbox"></div>
+          <div class="hover-overlay">
+            <p>Harvesting fresh vegetables</p>
+          </div>
+        </div>
+
+        <button class="nav-btn left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+     >
+    </section> -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <div class="text-cont">
+        <h2>TESTIMONIALS</h2>
+      </div>
+      <uk class="text-conts">Necessitatibus eius consequatur </uk>
+      <div class="testimonials-content">
+        <div class="test-left">
+          <div class="left-image">
+            <img class="cp" src="assest/image/testimonials-1.jpg" alt="" />
+            <div class="left-image-text">
+              <h5>
+                “Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Provident deleniti iusto molestias, dolore vel fugiat ab placeat
+                ea?”
+              </h5>
+            </div>
+            <h6>JAMES SMITH</h6>
+          </div>
+          <div class="left-image">
+            <img class="cp" src="assest/image/testimonials-3.jpg" alt="" />
+            <div class="left-image-text">
+              <h5>
+                “Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Provident deleniti iusto molestias, dolore vel fugiat ab placeat
+                ea?”
+              </h5>
+            </div>
+            <h6>JAMES SMITH</h6>
+          </div>
+        </div>
+        <div class="test-right">
+          <div class="right-image">
+            <img class="pp" src="assest/image/testimonials-2.jpg" alt="" />
+            <div class="right-image-text">
+              <h5>
+                “Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Provident deleniti iusto molestias, dolore vel fugiat ab placeat
+                ea?”
+              </h5>
+            </div>
+            <h6>Claire Anderson</h6>
+          </div>
+          <div class="right-image">
+            <img class="pp" src="assest/image/testimonials-4.jpg" alt="" />
+            <div class="right-image-text">
+              <h5>
+                “Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Provident deleniti iusto molestias, dolore vel fugiat ab placeat
+                ea?”
+              </h5>
+            </div>
+            <h6>Dan Smith</h6>
+          </div>
+        </div>
+      </div>
+      <div class="itu">
+        <div class="post-header">
+          <h4>Recent Posts</h4>
+        </div>
+        <h7>Necessitatibus eius consequatur</h7>
+        <div class="allt">
+          <div class="post">
+            <img
+              src="assest/image/blog-1.jpg"
+              alt="Post Image"
+              class="zoom-image"
+            />
+            <div class="post-details">
+              <span>December 12</span>
+            </div>
+            <div class="con">
+              <div class="lolo">
+                <h5>Euh htr yur er gra gra et <br />gra gra et</h5>
+              </div>
+            </div>
+          </div>
+          <!-- Post 2 -->
+          <div class="post">
+            <img
+              src="assest/image/blog-2.jpg"
+              alt="Post Image"
+              class="zoom-image"
+            />
+            <div class="post-details">
+              <!-- <h3>Post Title 2</h3>
+              <p>Category: Sports</p> -->
+              <span>July 17</span>
+            </div>
+            <div class="con">
+              <div class="lolo">
+                <h5>Euh htr yur er gra gra et <br />gra gra et</h5>
+              </div>
+            </div>
+          </div>
+          <!-- Post 3 -->
+          <div class="post">
+            <img
+              src="assest/image/blog-1.jpg"
+              alt="Post Image"
+              class="zoom-image"
+            />
+            <div class="post-details">
+              <!-- <h3>Post Title 3</h3>
+              <p>Category: Economics</p> -->
+              <span>September 05</span>
+            </div>
+            <div class="con">
+              <div class="lolo">
+                <h5>Euh htr yur er gra gra et <br />gra gra et</h5>
+              </div>
+            </div>
+          </div>
+          <!-- post 4 -->
+        </div>
+      </div>
+
+      <!-- Post 1 -->
+    </section>
+
+    <!-- Blog Section -->
+    <!-- <section id="blog">
+      <h2>Blog</h2>
+      <p>Read our latest articles on sustainable farming and fresh produce.</p>
+    </section> -->
+    <section class="subscribe">
+      <div class="subscribe-text">
+        <div class="left">
+          <div class="subscribe-text">
+            <h9>Subscribe To Our Newsletter</h9>
+          </div>
+          <h10>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br />Nesciunt, reprehenderit!
+          </h10>
+        </div>
+        <div class="right">
+          <div class="input">
+            <input type="text" id="" placeholder="" />
+            <button id="submit-btn" class="btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact">
+      <h2>Contact</h2>
+      <p>Reach out to us for more information or to place an order.</p>
+    </section> -->
+    <section class="footer-container">
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h2>AgriCulture</h2>
+            <p>A108 Adam Street<br />New York, NY 535022</p>
+            <p><strong>Phone:</strong> +1 5589 55488 55</p>
+            <p><strong>Email:</strong> info@example.com</p>
+          </div>
+
+          <div class="footer-section links">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section services">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section others">
+            <h3>Hic solutaesetp</h3>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section others">
+            <h3>Nobis illum</h3>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorem</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <div class="footer-bottom">
+        <div class="parent">
+          <p>© Copyright <strong>MyWebsite</strong>. All Rights Reserved</p>
+          <p>
+            Designed by <a href="https://bootstrapmade.com">BootstrapMade</a>
+          </p>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fa fa-times ico"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok ico"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook ico"></i></a>
+          <a href="#"><i class="fa-brands fa-telegram ico"></i></a>
+        </div>
+      </div>
+    </section>
+    <button id="scrollTOTopBtn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+      const scrollTOTopBtn = document.getElementById(`scrollTOTopBtn`);
+      // show button on scroll
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTOTopBtn.style.display = "block";
+        } else {
+          scrollTOTopBtn.style.display = `none`;
+        }
+      };
+      // functionality
+      scrollTOTopBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: `smooth`,
+        });
+      };
+    </script>
+
+    <script>
+      // Carousel functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? "block" : "none";
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 9000);
+      showSlide(currentSlide);
+
+      // document.getElementById(`ifeanyi`).addEventListener(`click`, () => {
+      //   window.location = `op.html`;
+      // });
+      // second slide show
+      const items = document.querySelectorAll(".services-cards");
+      const prevBtn = document.querySelector(".nav-btn.left");
+      const nextBtn = document.querySelector(".nav-btn.right");
+      let currentIndex = 0;
+
+      function showItem(index) {
+        items.forEach((item, i) => {
+          item.classList.remove("active");
+          if (i === index) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showItem(currentIndex);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        showItem(currentIndex);
+      });
+
+      // menu icon
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const menuIcon = document.querySelector(".menu-icon");
+      //   const navLinks = document.querySelector(".nav-links");
+
+      //   menuIcon.addEventListener("click", () => {
+      //     navLinks.classList.toggle("active");
+      //   });
+
+      //   const dropBtn = document.querySelector(".drop-btn");
+      //   const dropdownContent = document.querySelector(".dropdown-content");
+
+      //   dropBtn.addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //     dropdownContent.classList.toggle("active");
+      //   });
+      // });
+    </script>
+  </body>
+</html>
+<!-- Rord Kelly -->
